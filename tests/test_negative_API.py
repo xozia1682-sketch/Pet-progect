@@ -1,5 +1,6 @@
 import requests
 
+
 def test_neg_GET():
     res_get = requests.get("https://jsonplaceholder.typicode.com/999")
     assert res_get.status_code == 404
