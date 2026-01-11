@@ -1,22 +1,15 @@
 import requests
 import pytest
+import conftest
+from clients.get_client import GetClient
+from tests.conftest import get_client
 
 
-
-@pytest.fixture
-def base_url():
-    return "https://jsonplaceholder.typicode.com/"
-
-@pytest.fixture
-def session():
-    return requests.Session()
-
-
-
-
-def test_GET(base_url, session):
-    response = session.get(f"{base_url}")
+def test_GET(get_client):
+    response = get_client.get_data()
     assert response.status_code == 200
+
+
 
 
 def test_POST(base_url,session):
