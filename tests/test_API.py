@@ -1,13 +1,13 @@
 import requests
 import pytest
 import conftest
-from clients.get_client import GetClient
-from tests.conftest import get_client
+from conftest import base_url
+from conftest import session
 
 
-def test_GET(get_client):
-    response = get_client.get_data()
-    assert response.status_code == 200
+def test_GET(base_url,session):
+    res_get = session.get(f"{base_url}")
+    assert res_get.status_code == 200
 
 
 

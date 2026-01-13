@@ -18,4 +18,12 @@ def test_neg_PUT():
     res_put = requests.put("https://jsonplaceholder.typicode.com/posts",json=data_put)
     assert res_put.json() == {}
 
+def test_neg_patch():
+    data_patch = {
+        "jumaisa":223456
+    }
+    resnegpatch = requests.patch("https://jsonplaceholder.typicode.com/posts",json=data_patch)
+    assert resnegpatch.json() == {}
+
+
 

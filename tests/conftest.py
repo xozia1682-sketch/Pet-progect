@@ -14,4 +14,3 @@ def session():
 @pytest.fixture
 def get_client(session,base_url):
     return GetClient(session,base_url)
-#vnsdlgvndfvnfdgd
